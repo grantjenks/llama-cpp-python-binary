@@ -24,8 +24,11 @@ build: patch
 	rm -rf llama-cpp-python/docker
 	rm -rf llama-cpp-python/vendor
 	pip install build
-	cd llama-cpp-python && python -m build
+	cd llama-cpp-python && python -m build --sdist
+	cp -r llama-cpp-python/dist dist
 
 ## Clean the workspace
 clean:
+	rm -rf llama-cpp-python
+	rm -rf dist
 	git clean -fdX
