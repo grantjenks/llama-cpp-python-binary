@@ -3,7 +3,7 @@ requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "llama_cpp_python"
+name = "llama_cpp_python_binary"
 dynamic = ["version"]
 description = "Python bindings for the llama.cpp library"
 readme = "README.md"
