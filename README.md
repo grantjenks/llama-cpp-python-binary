@@ -3,3 +3,7 @@
 *Use [llama-cpp-python](https://github.com/abetlen/llama-cpp-python) instead.*
 
 Pre-compiled Linux binary for llama-cpp-python packaged as a Python sdist.
+
+## TODO
+
+- Add .so files to sdist package
