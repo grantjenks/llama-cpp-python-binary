@@ -12,8 +12,9 @@ clone: install
 
 ## Copy .so binaries from install to cloned repository
 copy: clone
-	cp /usr/local/python/3.10.13/lib/python3.10/site-packages/llama_cpp/libllama.so llama-cpp-python/llama_cpp/
-	cp /usr/local/python/3.10.13/lib/python3.10/site-packages/llama_cpp/libllava.so llama-cpp-python/llama_cpp/
+	$(eval LLAMA_CPP_DIR=$(shell python -c "import llama_cpp, pathlib; print(pathlib.Path(llama_cpp.__file__).parent)"))
+	cp $(LLAMA_CPP_DIR)/libllama.so llama-cpp-python/llama_cpp/
+	cp $(LLAMA_CPP_DIR)/libllava.so llama-cpp-python/llama_cpp/
 
 ## Patch llama-cpp-python
 patch: copy
