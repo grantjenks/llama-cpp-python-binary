@@ -8,12 +8,12 @@ install:
 ## Clone llama-cpp-python
 clone: install
 	git clone -n https://github.com/abetlen/llama-cpp-python.git
-	cd /workspaces/llama-cpp-python-binary/llama-cpp-python && git checkout tags/v0.2.26
+	cd llama-cpp-python && git checkout tags/v0.2.26
 
 ## Copy .so binaries from install to cloned repository
 copy: clone
-	cp /usr/local/python/3.10.13/lib/python3.10/site-packages/llama_cpp/libllama.so /workspaces/llama-cpp-python-binary/llama-cpp-python/llama_cpp/
-	cp /usr/local/python/3.10.13/lib/python3.10/site-packages/llama_cpp/libllava.so /workspaces/llama-cpp-python-binary/llama-cpp-python/llama_cpp/
+	cp /usr/local/python/3.10.13/lib/python3.10/site-packages/llama_cpp/libllama.so llama-cpp-python/llama_cpp/
+	cp /usr/local/python/3.10.13/lib/python3.10/site-packages/llama_cpp/libllava.so llama-cpp-python/llama_cpp/
 
 ## Patch llama-cpp-python
 patch: copy
