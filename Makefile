@@ -18,6 +18,7 @@ copy: clone
 ## Patch llama-cpp-python
 patch: copy
 	cp patches/pyproject.toml llama-cpp-python/pyproject.toml
+	cp patches/MANIFEST.in llama-cpp-python/MANIFEST.in
 
 ## Build sdist
 build: patch
